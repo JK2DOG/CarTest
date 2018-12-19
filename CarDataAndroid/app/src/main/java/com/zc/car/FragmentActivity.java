@@ -6,6 +6,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import butterknife.BindView;
+import com.zc.car.bean.CarDataEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by margin on 2017/11/1.
@@ -14,6 +17,14 @@ import butterknife.BindView;
  */
 
 public abstract class FragmentActivity extends BaseActivity {
+
+    protected List<CarDataEntity> mCarList;
+    protected List<CarDataEntity> mTruck5List;
+    protected List<CarDataEntity> mTruck10List;
+    protected List<CarDataEntity> mTipperList;
+    protected List<CarDataEntity> mArticulatedList;
+
+
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
@@ -26,6 +37,11 @@ public abstract class FragmentActivity extends BaseActivity {
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+        mCarList=new ArrayList<>();
+        mTruck5List=new ArrayList<>();
+        mTruck10List=new ArrayList<>();
+        mTipperList=new ArrayList<>();
+        mArticulatedList=new ArrayList<>();
 //        mToolbar.setTitle("");
 //        mToolbar.setTitleTextColor(Color.WHITE);
 //        mToolbar.setNavigationIcon(getNavigationIconId());
