@@ -1,11 +1,19 @@
 package com.zc.car;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.view.View;
 import butterknife.OnClick;
 import com.zc.car.bean.CarDataEntity;
+import pub.devrel.easypermissions.EasyPermissions;
 
 public class HomePageFragment extends PageFragment {
+
+    private static final int RC_LOCATION_CONTACTS_PERM = 124;
+
+    private static final String[] LOCATION_AND_CONTACTS =
+        { Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE };
+
 
     @Override
     protected void initView(View rootView) {
@@ -15,6 +23,13 @@ public class HomePageFragment extends PageFragment {
 
     @OnClick({ R.id.btn_car, R.id.btn_5t, R.id.btn_10t, R.id.btn_tip, R.id.btn_art })
     void onClick(View view) {
+        if (!hasStoragePermission()) {
+            EasyPermissions.requestPermissions(
+                activity,
+                getString(R.string.rationale_download),
+                RC_LOCATION_CONTACTS_PERM, LOCATION_AND_CONTACTS);
+            return;
+        }
         switch (view.getId()) {
             case R.id.btn_car:
                 Bundle bundle1 = new Bundle();
@@ -47,6 +62,11 @@ public class HomePageFragment extends PageFragment {
                     mCurrentTitle, bundle5, false);
                 break;
         }
+    }
+
+
+    private boolean hasStoragePermission() {
+        return EasyPermissions.hasPermissions(activity, LOCATION_AND_CONTACTS);
     }
 
 

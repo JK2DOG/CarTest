@@ -1,5 +1,11 @@
 package com.zc.car.bean;
 
+import com.litesuits.orm.db.annotation.NotNull;
+import com.litesuits.orm.db.annotation.PrimaryKey;
+import com.litesuits.orm.db.annotation.Table;
+import com.litesuits.orm.db.enums.AssignType;
+
+@Table("car")
 public class CarDataEntity {
 
     public static final int CAR = 1;
@@ -8,20 +14,23 @@ public class CarDataEntity {
     public static final int TIPPER = 4;
     public static final int ARTICULATED = 5;
 
+    // 指定自增，每个对象需要有一个主键
+    @PrimaryKey(AssignType.AUTO_INCREMENT)
     private int id;
 
+    @NotNull
     private int type;
-
+    @NotNull
     private String driver;
-
+    @NotNull
     private String rego;
-
+    @NotNull
     private String s_time;
-
+    @NotNull
     private String f_breake;
-
+    @NotNull
     private String s_breake;
-
+    @NotNull
     private String e_time;
 
 

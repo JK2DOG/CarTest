@@ -60,7 +60,7 @@ public class CarListFragment extends PageFragment {
 
 
     @OnClick(R.id.btn_retrun) void onClick() {
-
+        activity.back();
     }
 
 

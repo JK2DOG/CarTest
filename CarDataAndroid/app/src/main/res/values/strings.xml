@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">MyVechicle</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="rationale_download">App need this Permissions to save data</string>
+
 </resources>

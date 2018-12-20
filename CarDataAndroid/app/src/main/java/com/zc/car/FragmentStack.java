@@ -17,7 +17,7 @@ public class FragmentStack {
         this.id = id;
     }
 
-    public void push(Class<? extends BaseFragment> clz, boolean transit) {
+    public void push(Class<? extends BaseFragment> clz,String newTitle, String oldTitle, boolean transit) {
         FragmentTransaction transaction = manager.beginTransaction();
         if (transit) {
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
@@ -36,6 +36,10 @@ public class FragmentStack {
                     }
                 }
             }
+            Bundle bundle = new Bundle();
+            bundle.putString("currentTitle", newTitle);
+            bundle.putString("prevTitle", oldTitle);
+            fragment.setArguments(bundle);
             transaction.add(id, fragment).addToBackStack(null);
             transaction.commitAllowingStateLoss();
         } catch (InstantiationException | IllegalAccessException e) {

@@ -51,25 +51,32 @@ public class TypeCarFragment extends PageFragment {
     void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_start:
-                mBtnStart.setVisibility(View.GONE);
+                mBtnStart.setVisibility(View.INVISIBLE);
+                mBtnStart.setEnabled(false);
+                mBtnFB.setEnabled(true);
                 mBtnFB.setVisibility(View.VISIBLE);
                 mTvStart.setVisibility(View.VISIBLE);
                 mTvStart.setText(DateUtils.getStringToday());
                 break;
             case R.id.btn_f_b:
-                mBtnFB.setVisibility(View.GONE);
+                mBtnFB.setVisibility(View.INVISIBLE);
+                mBtnFB.setEnabled(false);
+                mBtnSB.setEnabled(true);
                 mBtnSB.setVisibility(View.VISIBLE);
                 mTvFB.setVisibility(View.VISIBLE);
                 mTvFB.setText(DateUtils.getStringToday());
                 break;
             case R.id.btn_s_b:
-                mBtnSB.setVisibility(View.GONE);
+                mBtnSB.setVisibility(View.INVISIBLE);
+                mBtnSB.setEnabled(false);
+                mBtnEnd.setEnabled(true);
                 mBtnEnd.setVisibility(View.VISIBLE);
                 mTvSB.setVisibility(View.VISIBLE);
                 mTvSB.setText(DateUtils.getStringToday());
                 break;
             case R.id.btn_end:
-                mBtnEnd.setVisibility(View.GONE);
+                mBtnEnd.setVisibility(View.INVISIBLE);
+                mBtnEnd.setEnabled(false);
                 mTvEnd.setVisibility(View.VISIBLE);
                 mTvEnd.setText(DateUtils.getStringToday());
                 break;
@@ -87,20 +94,55 @@ public class TypeCarFragment extends PageFragment {
                         "Entry not saved as not all data entered.\nComplete all entries and try again.",
                         Toast.LENGTH_SHORT).show();
                 } else {
-                  switch (mCurrentCarType){
-                      case CarDataEntity.CAR:
-                          activity.mCarList.add(new CarDataEntity(mCurrentCarType,driver,rego,s_time,f_breake,s_breake,e_time));
-                          Toast.makeText(getContext(),
-                              "Save Success",
-                              Toast.LENGTH_SHORT).show();
-                          break;
-                  }
+                    switch (mCurrentCarType) {
+                        case CarDataEntity.CAR:
+                            activity.mCarList.add(
+                                new CarDataEntity(mCurrentCarType, driver, rego, s_time, f_breake,
+                                    s_breake, e_time));
+                            Toast.makeText(getContext(),
+                                "Save Success",
+                                Toast.LENGTH_SHORT).show();
+                            break;
+                        case CarDataEntity.TRUCK_5:
+                            activity.mTruck5List.add(
+                                new CarDataEntity(mCurrentCarType, driver, rego, s_time, f_breake,
+                                    s_breake, e_time));
+                            Toast.makeText(getContext(),
+                                "Save Success",
+                                Toast.LENGTH_SHORT).show();
+                            break;
+                        case CarDataEntity.TRUCK_10:
+                            activity.mTruck10List.add(
+                                new CarDataEntity(mCurrentCarType, driver, rego, s_time, f_breake,
+                                    s_breake, e_time));
+                            Toast.makeText(getContext(),
+                                "Save Success",
+                                Toast.LENGTH_SHORT).show();
+                            break;
+                        case CarDataEntity.TIPPER:
+                            activity.mTruck10List.add(
+                                new CarDataEntity(mCurrentCarType, driver, rego, s_time, f_breake,
+                                    s_breake, e_time));
+                            Toast.makeText(getContext(),
+                                "Save Success",
+                                Toast.LENGTH_SHORT).show();
+                            break;
+                        case CarDataEntity.ARTICULATED:
+                            activity.mArticulatedList.add(
+                                new CarDataEntity(mCurrentCarType, driver, rego, s_time, f_breake,
+                                    s_breake, e_time));
+                            Toast.makeText(getContext(),
+                                "Save Success",
+                                Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                 }
                 break;
             case R.id.btn_show_log:
                 Bundle bundle = new Bundle();
                 bundle.putInt("type", mCurrentCarType);
-                activity.pushFragmentWithExtraAndTitle(CarListFragment.class,"MyVechicle", mCurrentTitle, bundle, false);
+                activity.pushFragmentWithExtraAndTitle(CarListFragment.class, "MyVechicle",
+                    mCurrentTitle, bundle, false);
                 break;
             case R.id.btn_pre:
                 activity.back();
@@ -108,9 +150,12 @@ public class TypeCarFragment extends PageFragment {
             case R.id.btn_next:
                 Bundle nextBundle = new Bundle();
                 nextBundle.putInt("type", mCurrentCarType);
-                activity.pushFragmentWithExtraAndTitle(TypeCarFragment.class,"MyVechicle", mCurrentTitle, nextBundle, false);
+                activity.pushFragmentWithExtraAndTitle(TypeCarFragment.class, "MyVechicle",
+                    mCurrentTitle, nextBundle, false);
                 break;
             case R.id.btn_home:
+                activity.mFragmentStack.push(HomePageFragment.class,"MyVechicle",
+                    mCurrentTitle,true);
                 break;
         }
     }

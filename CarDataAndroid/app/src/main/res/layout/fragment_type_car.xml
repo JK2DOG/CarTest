@@ -19,7 +19,7 @@
             android:layout_marginTop="20dp"
             android:textColor="#666666"
             android:textSize="24sp"
-            tools:text="CAR" />
+            tools:text="CAR"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="Driver:"
                 android:textColor="#666666"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/et_driver"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Drivers' name"
                 android:textColor="#666666"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="Rego #:"
                 android:textColor="#666666"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <EditText
                 android:id="@+id/et_rego"
@@ -65,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:hint="xxx-yyy"
                 android:textColor="#666666"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="Start time:"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/tv_s_time"
@@ -91,7 +91,7 @@
                 android:layout_marginLeft="20dp"
                 android:textColor="#666666"
                 android:textSize="18sp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -104,12 +104,13 @@
 
             <Button
                 android:id="@+id/btn_f_b"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:enabled="false"
                 android:text="First break:"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/tv_f_b"
@@ -118,7 +119,7 @@
                 android:layout_marginLeft="20dp"
                 android:textColor="#666666"
                 android:textSize="18sp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -131,12 +132,13 @@
 
             <Button
                 android:id="@+id/btn_s_b"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:text="Second break:"
+                android:enabled="false"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/tv_s_b"
@@ -145,7 +147,7 @@
                 android:layout_marginLeft="20dp"
                 android:textColor="#666666"
                 android:textSize="18sp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -158,12 +160,13 @@
 
             <Button
                 android:id="@+id/btn_end"
-                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:enabled="false"
                 android:text="End time:"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <TextView
                 android:id="@+id/tv_e_t"
@@ -172,7 +175,7 @@
                 android:layout_marginLeft="20dp"
                 android:textColor="#666666"
                 android:textSize="18sp"
-                android:visibility="gone" />
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -182,7 +185,7 @@
             android:layout_height="wrap_content"
             android:text="Save Log Entry"
             android:textColor="#222222"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
 
         <Button
             android:id="@+id/btn_show_log"
@@ -190,14 +193,13 @@
             android:layout_height="wrap_content"
             android:text="Show Log Entries"
             android:textColor="#222222"
-            android:textSize="18sp" />
-
+            android:textSize="18sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="20dp"
-            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
@@ -208,7 +210,7 @@
                 android:layout_weight="1"
                 android:text="Previous"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/btn_next"
@@ -219,7 +221,7 @@
                 android:layout_weight="1"
                 android:text="Next"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <Button
                 android:id="@+id/btn_home"
@@ -229,7 +231,7 @@
                 android:layout_weight="1"
                 android:text="Home"
                 android:textColor="#222222"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
